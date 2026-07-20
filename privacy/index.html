@@ -6,71 +6,86 @@
 <title>Privacy Policy — Basket Vitality</title>
 <meta name="description" content="How Basket Vitality handles your data: on-device first, no accounts, no analytics. The plain-language version.">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F6F2DE">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
+  /* Basket Vitality identity-v4 — same typefaces as the app (self-hosted; no font CDN). */
+  @font-face { font-family:"Fraunces"; src:url("/fonts/fraunces_regular.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:"Fraunces"; src:url("/fonts/fraunces_italic.ttf") format("truetype"); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:"Geist"; src:url("/fonts/geist_regular.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:"Geist"; src:url("/fonts/geist_medium.ttf") format("truetype"); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:"Geist Mono"; src:url("/fonts/geist_mono_medium.ttf") format("truetype"); font-weight:500; font-style:normal; font-display:swap; }
+
   :root {
-    --emerald: #057331;
-    --forest: #054B16;
-    --gold: #DAB041;
-    --ivory: #F6F2DE;
-    --mist: #EAF3EC;
-    --white: #FFFFFF;
-    --ink: #1B2A21;
-    --ink-muted: #545F58;
+    --emerald:#057331; --forest:#054B16; --gold:#DAB041;
+    --ivory:#F6F2DE; --paper-raised:#FBF9EF; --paper-sunken:#E5E2CF;
+    --ink:#1B2A21; --ink-subtle:#545F58; --ink-muted:#767F7A; --outline:#E8EAE9;
+    --serif:"Fraunces", Georgia, "Times New Roman", serif;
+    --sans:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
   body {
-    margin: 0;
-    background: var(--ivory);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
-    font-size: 17px;
+    margin:0; background:var(--ivory); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.7;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 72px; }
-  header { padding: 8px 0 24px; }
-  .wordmark {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.5rem; letter-spacing: -0.01em; color: var(--forest); margin: 0;
-  }
-  .wordmark em { font-style: italic; color: var(--gold); }
+  .wrap { max-width:720px; margin:0 auto; padding:36px 22px 80px; }
+
+  /* Wordmark — "Basket Vitality" with the one-point gold italic accent, like the app drawer. */
+  header { padding:4px 0 22px; }
+  .wordmark { font-family:var(--serif); font-size:1.55rem; color:var(--ink); margin:0; letter-spacing:-0.01em; }
+  .wordmark em { font-style:italic; color:var(--gold); }
+  .tagline { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-muted); margin:6px 0 0; }
+
   .card {
-    background: var(--white);
-    border: 1px solid var(--mist);
-    border-radius: 14px;
-    padding: 28px 28px 8px;
-    box-shadow: 0 1px 2px rgba(27,42,33,0.04);
+    background:var(--paper-raised); border:1px solid var(--outline); border-radius:8px;
+    padding:30px 30px 12px;
   }
-  h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 2rem; line-height: 1.15; margin: 0 0 4px; color: var(--ink); letter-spacing: -0.01em;
+
+  h1 { font-family:var(--serif); font-weight:400; font-size:2.4rem; line-height:1.08; letter-spacing:-0.015em; margin:0 0 10px; color:var(--ink); }
+  h1 em { font-style:italic; color:var(--gold); }
+  .eyebrow { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 6px; }
+
+  h2 { font-family:var(--serif); font-weight:400; font-size:1.45rem; line-height:1.2; letter-spacing:-0.01em; color:var(--ink); margin:36px 0 8px; }
+  h3 { font-family:var(--sans); font-weight:500; font-size:1.02rem; color:var(--forest); margin:22px 0 4px; }
+  p, li { color:var(--ink); }
+  strong { font-weight:500; color:var(--ink); }
+  a { color:var(--emerald); text-underline-offset:2px; text-decoration-thickness:1px; }
+  a:hover { color:var(--forest); }
+
+  /* "The short version" — a raised-ivory card with the gold one-point accent rule. */
+  .lede { background:var(--paper-raised); border:1px solid var(--outline); border-left:3px solid var(--gold); border-radius:8px; padding:18px 20px; margin:18px 0 6px; }
+  .lede p { margin:0 0 12px; }
+  .lede p:last-child { margin-bottom:0; }
+
+  hr { border:none; border-top:1px solid var(--outline); margin:32px 0; }
+
+  .table-scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; }
+  th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--outline); vertical-align:top; }
+  th { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-muted); font-weight:500; white-space:nowrap; }
+  td:first-child { white-space:nowrap; }
+
+  footer { margin-top:26px; text-align:center; }
+  footer p { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; color:var(--ink-muted); }
+
+  @media (max-width:560px) {
+    body { font-size:16px; }
+    .card { padding:24px 20px 8px; }
+    h1 { font-size:2rem; }
   }
-  .updated { color: var(--ink-muted); font-size: 0.9rem; margin: 0 0 8px; }
-  h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.3rem; margin: 34px 0 8px; color: var(--emerald); letter-spacing: -0.01em;
-  }
-  h3 { font-size: 1.05rem; margin: 20px 0 4px; color: var(--forest); }
-  p, li { color: var(--ink); }
-  a { color: var(--emerald); text-underline-offset: 2px; }
-  .lede {
-    background: var(--mist);
-    border-left: 3px solid var(--gold);
-    border-radius: 8px;
-    padding: 16px 18px;
-    margin: 18px 0 8px;
-  }
-  .lede p:first-child { margin-top: 0; }
-  .lede p:last-child { margin-bottom: 0; }
-  hr { border: none; border-top: 1px solid var(--mist); margin: 30px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; display: block; overflow-x: auto; }
-  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--mist); vertical-align: top; }
-  th { color: var(--forest); font-size: 0.95rem; white-space: nowrap; }
-  strong { color: var(--ink); }
-  footer { margin-top: 28px; color: var(--ink-muted); font-size: 0.9rem; text-align: center; }
+
   @media (prefers-color-scheme: dark) {
-    :root { --ivory: #121814; --mist: #1E2A22; --white: #171F19; --ink: #E8EAE9; --ink-muted: #9BA39D; --emerald: #4FB477; --forest: #86C11C; }
-    a { color: var(--forest); }
+    :root {
+      --emerald:#4FB477; --forest:#86C11C; --gold:#E4C169;
+      --ivory:#101914; --paper-raised:#17201A; --paper-sunken:#0C120E;
+      --ink:#E8EAE9; --ink-subtle:#BBBFBC; --ink-muted:#9BA39D; --outline:#26332B;
+    }
+    body { -webkit-font-smoothing:auto; }
   }
 </style>
 </head>
@@ -78,11 +93,12 @@
 <div class="wrap">
   <header>
     <p class="wordmark">Basket <em>Vitality</em></p>
+    <p class="tagline">Smarter baskets · Healthier choices</p>
   </header>
 
   <main class="card">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 20 July 2026</p>
+    <p class="eyebrow">Last updated · 20 July 2026</p>
+    <h1>Privacy <em>Policy</em></h1>
 
     <div class="lede">
       <p>Basket Vitality reads your receipts and bank statements on your phone, and keeps them there. We don't have a server that stores your data, we don't have accounts, and we can't see your spending, your shopping, or your health information. There is no analytics and no crash reporting.</p>
@@ -122,6 +138,7 @@
     <p>There is <strong>no analytics SDK</strong>, <strong>no crash reporting</strong>, <strong>no advertising</strong>, <strong>no tracking</strong>, and no telemetry of any kind in the app. This isn't a policy promise about how we'd use such data — the code contains none.</p>
 
     <h2>Permissions we ask for, and why</h2>
+    <div class="table-scroll">
     <table>
       <thead><tr><th>Permission</th><th>Why</th></tr></thead>
       <tbody>
@@ -130,6 +147,7 @@
         <tr><td><strong>Biometrics / Fingerprint</strong></td><td>To unlock the app, if you choose to enable it. Your fingerprint or face never leaves the Android system; the app only receives a yes/no.</td></tr>
       </tbody>
     </table>
+    </div>
     <p>The app requests no location, no contacts, no SMS, and no access to your photo library.</p>
 
     <h2>Text recognition happens on your device</h2>
