@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
-  /* Basket Vitality identity-v4 — same typefaces as the app (self-hosted; no font CDN). */
+  /* Basket Vitality identity-v4 — the app's own typefaces, self-hosted (no font CDN). */
   @font-face { font-family:"Fraunces"; src:url("/fonts/fraunces_regular.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
   @font-face { font-family:"Fraunces"; src:url("/fonts/fraunces_italic.ttf") format("truetype"); font-weight:400; font-style:italic; font-display:swap; }
   @font-face { font-family:"Geist"; src:url("/fonts/geist_regular.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
@@ -20,8 +20,8 @@
 
   :root {
     --emerald:#057331; --forest:#054B16; --gold:#DAB041;
-    --ivory:#F6F2DE; --paper-raised:#FBF9EF; --paper-sunken:#E5E2CF;
-    --ink:#1B2A21; --ink-subtle:#545F58; --ink-muted:#767F7A; --outline:#E8EAE9;
+    --ivory:#F6F2DE; --paper-raised:#FBF9EF; --mist:#EAF3EC;
+    --ink:#1B2A21; --ink-subtle:#545F58; --ink-muted:#767F7A; --outline:#E5E2CF;
     --serif:"Fraunces", Georgia, "Times New Roman", serif;
     --sans:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -33,56 +33,53 @@
     font-family:var(--sans); font-size:17px; line-height:1.7;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
-  .wrap { max-width:720px; margin:0 auto; padding:36px 22px 80px; }
+  .wrap { max-width:680px; margin:0 auto; padding:40px 22px 84px; }
 
-  /* Wordmark — "Basket Vitality" with the one-point gold italic accent, like the app drawer. */
-  header { padding:4px 0 22px; }
-  .wordmark { font-family:var(--serif); font-size:1.55rem; color:var(--ink); margin:0; letter-spacing:-0.01em; }
+  /* Header — the app's "☰ Home." wordmark treatment: serif with a one-point gold accent. */
+  header { display:flex; align-items:center; gap:12px; padding-bottom:30px; }
+  .mark { width:34px; height:34px; border-radius:9px; }
+  .wordmark { font-family:var(--serif); font-size:1.4rem; color:var(--ink); margin:0; letter-spacing:-0.01em; }
   .wordmark em { font-style:italic; color:var(--gold); }
-  .tagline { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-muted); margin:6px 0 0; }
 
-  .card {
-    background:var(--paper-raised); border:1px solid var(--outline); border-radius:8px;
-    padding:30px 30px 12px;
-  }
+  .eyebrow { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 8px; }
 
-  h1 { font-family:var(--serif); font-weight:400; font-size:2.4rem; line-height:1.08; letter-spacing:-0.015em; margin:0 0 10px; color:var(--ink); }
+  /* Page title — Fraunces with the gold-italic accent, echoing "July 2026". */
+  h1 { font-family:var(--serif); font-weight:400; font-size:2.6rem; line-height:1.05; letter-spacing:-0.015em; margin:0 0 4px; color:var(--ink); }
   h1 em { font-style:italic; color:var(--gold); }
-  .eyebrow { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 6px; }
 
-  h2 { font-family:var(--serif); font-weight:400; font-size:1.45rem; line-height:1.2; letter-spacing:-0.01em; color:var(--ink); margin:36px 0 8px; }
+  /* "The short version" — a mist card, like the app's soft info cards. */
+  .lede { background:var(--mist); border-radius:16px; padding:22px 24px; margin:22px 0 4px; }
+  .lede p { margin:0 0 12px; }
+  .lede p:last-child { margin-bottom:0; }
+
+  /* Section headers — Geist Mono caps, the app's label texture (e.g. "Latest / Activity"). */
+  h2 { font-family:var(--mono); font-weight:500; font-size:0.82rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink); margin:44px 0 10px; }
   h3 { font-family:var(--sans); font-weight:500; font-size:1.02rem; color:var(--forest); margin:22px 0 4px; }
   p, li { color:var(--ink); }
+  li { margin:5px 0; }
   strong { font-weight:500; color:var(--ink); }
   a { color:var(--emerald); text-underline-offset:2px; text-decoration-thickness:1px; }
   a:hover { color:var(--forest); }
 
-  /* "The short version" — a raised-ivory card with the gold one-point accent rule. */
-  .lede { background:var(--paper-raised); border:1px solid var(--outline); border-left:3px solid var(--gold); border-radius:8px; padding:18px 20px; margin:18px 0 6px; }
-  .lede p { margin:0 0 12px; }
-  .lede p:last-child { margin-bottom:0; }
-
-  hr { border:none; border-top:1px solid var(--outline); margin:32px 0; }
-
-  .table-scroll { overflow-x:auto; }
-  table { width:100%; border-collapse:collapse; margin:14px 0; }
-  th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--outline); vertical-align:top; }
-  th { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-muted); font-weight:500; white-space:nowrap; }
+  /* Permissions — a soft raised-ivory card, rounded like the app. */
+  .panel { background:var(--paper-raised); border-radius:16px; padding:6px 20px; margin:14px 0; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:14px 8px; border-bottom:1px solid var(--outline); vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  th { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-muted); font-weight:500; }
   td:first-child { white-space:nowrap; }
 
-  footer { margin-top:26px; text-align:center; }
-  footer p { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; color:var(--ink-muted); }
+  footer { margin-top:40px; padding-top:20px; border-top:1px solid var(--outline); text-align:center; }
+  footer p { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-muted); margin:0; }
 
   @media (max-width:560px) {
     body { font-size:16px; }
-    .card { padding:24px 20px 8px; }
-    h1 { font-size:2rem; }
+    h1 { font-size:2.1rem; }
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
       --emerald:#4FB477; --forest:#86C11C; --gold:#E4C169;
-      --ivory:#101914; --paper-raised:#17201A; --paper-sunken:#0C120E;
+      --ivory:#101914; --paper-raised:#17201A; --mist:#16241A;
       --ink:#E8EAE9; --ink-subtle:#BBBFBC; --ink-muted:#9BA39D; --outline:#26332B;
     }
     body { -webkit-font-smoothing:auto; }
@@ -92,53 +89,52 @@
 <body>
 <div class="wrap">
   <header>
+    <img class="mark" src="/favicon-32x32.png" alt="" width="34" height="34">
     <p class="wordmark">Basket <em>Vitality</em></p>
-    <p class="tagline">Smarter baskets · Healthier choices</p>
   </header>
 
-  <main class="card">
-    <p class="eyebrow">Last updated · 20 July 2026</p>
-    <h1>Privacy <em>Policy</em></h1>
+  <p class="eyebrow">Last updated · 20 July 2026</p>
+  <h1>Privacy <em>Policy</em></h1>
 
-    <div class="lede">
-      <p>Basket Vitality reads your receipts and bank statements on your phone, and keeps them there. We don't have a server that stores your data, we don't have accounts, and we can't see your spending, your shopping, or your health information. There is no analytics and no crash reporting.</p>
-      <p>The one thing that leaves your phone is a barcode, when you scan a product and we look it up in the Open Food Facts database. Nothing that identifies you goes with it.</p>
-      <p>If that's all you wanted to know, you're done. The rest is detail.</p>
-    </div>
+  <div class="lede">
+    <p>Basket Vitality reads your receipts and bank statements on your phone, and keeps them there. We don't have a server that stores your data, we don't have accounts, and we can't see your spending, your shopping, or your health information. There is no analytics and no crash reporting.</p>
+    <p>The one thing that leaves your phone is a barcode, when you scan a product and we look it up in the Open Food Facts database. Nothing that identifies you goes with it.</p>
+    <p>If that's all you wanted to know, you're done. The rest is detail.</p>
+  </div>
 
-    <h2>Who we are</h2>
-    <p>Basket Vitality is built by TheDevSpot, based in the Netherlands. For anything privacy-related, contact <a href="mailto:privacy@basketvitality.com">privacy@basketvitality.com</a>.</p>
-    <p>Under the GDPR we are the data controller for the very limited processing described below. For everything stored on your device, you hold the data — we have no copy and no access.</p>
+  <h2>Who we are</h2>
+  <p>Basket Vitality is built by TheDevSpot, based in the Netherlands. For anything privacy-related, contact <a href="mailto:privacy@basketvitality.com">privacy@basketvitality.com</a>.</p>
+  <p>Under the GDPR we are the data controller for the very limited processing described below. For everything stored on your device, you hold the data — we have no copy and no access.</p>
 
-    <h2>What stays on your phone</h2>
-    <p>All of it, in practice:</p>
-    <ul>
-      <li><strong>Receipts</strong> you scan, including the photo, the parsed line items, the store, the date and the totals.</li>
-      <li><strong>Transactions</strong>, whether you typed them in or imported them from a bank statement file.</li>
-      <li><strong>Bank statement imports</strong> — the file you choose is parsed on the device.</li>
-      <li><strong>Budgets, categories, recurring charges</strong> and any notes you add.</li>
-      <li><strong>Product and nutrition data</strong> matched to your items, and the health and environmental scores derived from them.</li>
-      <li><strong>Your PIN</strong> (stored only as a salted hash) and your biometric preference.</li>
-    </ul>
-    <p>This is stored in an encrypted database on your device, using AES-256. The encryption key is itself protected by the Android Keystore, unlocked by your PIN or biometrics. If someone takes your phone and pulls the app's files off it, they get ciphertext.</p>
-    <p>We never receive any of this. There is no account to sign into, no sync, and no backup we hold.</p>
+  <h2>What stays on your phone</h2>
+  <p>All of it, in practice:</p>
+  <ul>
+    <li><strong>Receipts</strong> you scan, including the photo, the parsed line items, the store, the date and the totals.</li>
+    <li><strong>Transactions</strong>, whether you typed them in or imported them from a bank statement file.</li>
+    <li><strong>Bank statement imports</strong> — the file you choose is parsed on the device.</li>
+    <li><strong>Budgets, categories, recurring charges</strong> and any notes you add.</li>
+    <li><strong>Product and nutrition data</strong> matched to your items, and the health and environmental scores derived from them.</li>
+    <li><strong>Your PIN</strong> (stored only as a salted hash) and your biometric preference.</li>
+  </ul>
+  <p>This is stored in an encrypted database on your device, using AES-256. The encryption key is itself protected by the Android Keystore, unlocked by your PIN or biometrics. If someone takes your phone and pulls the app's files off it, they get ciphertext.</p>
+  <p>We never receive any of this. There is no account to sign into, no sync, and no backup we hold.</p>
 
-    <h2>What leaves your phone</h2>
-    <p>Two things, and only two.</p>
+  <h2>What leaves your phone</h2>
+  <p>Two things, and only two.</p>
 
-    <h3>1. Product lookups (Open Food Facts)</h3>
-    <p>When a scanned item isn't in the product database already bundled with the app, we ask <a href="https://world.openfoodfacts.org">Open Food Facts</a> about it. The request contains <strong>only the product's barcode</strong> — a number identifying the product, not you. It carries no device identifier, no account, no location, and nothing about your basket, your budget or your other items.</p>
-    <p>Open Food Facts is an independent open database. Their servers will see the request, including the IP address your phone connects from, as any web request would. We do not send them anything else, and we do not receive anything about you from them.</p>
-    <p>The request identifies the app in its User-Agent header so Open Food Facts can see which application is calling — this is their published etiquette for API users, not a tracking mechanism.</p>
+  <h3>1. Product lookups (Open Food Facts)</h3>
+  <p>When a scanned item isn't in the product database already bundled with the app, we ask <a href="https://world.openfoodfacts.org">Open Food Facts</a> about it. The request contains <strong>only the product's barcode</strong> — a number identifying the product, not you. It carries no device identifier, no account, no location, and nothing about your basket, your budget or your other items.</p>
+  <p>Open Food Facts is an independent open database. Their servers will see the request, including the IP address your phone connects from, as any web request would. We do not send them anything else, and we do not receive anything about you from them.</p>
+  <p>The request identifies the app in its User-Agent header so Open Food Facts can see which application is calling — this is their published etiquette for API users, not a tracking mechanism.</p>
 
-    <h3>2. Product database updates</h3>
-    <p>The app periodically downloads an updated bundle of product and nutrition data. This is a plain download — a file comes to your phone. Nothing about you is sent in order to fetch it.</p>
+  <h3>2. Product database updates</h3>
+  <p>The app periodically downloads an updated bundle of product and nutrition data. This is a plain download — a file comes to your phone. Nothing about you is sent in order to fetch it.</p>
 
-    <h3>That's the complete list</h3>
-    <p>There is <strong>no analytics SDK</strong>, <strong>no crash reporting</strong>, <strong>no advertising</strong>, <strong>no tracking</strong>, and no telemetry of any kind in the app. This isn't a policy promise about how we'd use such data — the code contains none.</p>
+  <h3>That's the complete list</h3>
+  <p>There is <strong>no analytics SDK</strong>, <strong>no crash reporting</strong>, <strong>no advertising</strong>, <strong>no tracking</strong>, and no telemetry of any kind in the app. This isn't a policy promise about how we'd use such data — the code contains none.</p>
 
-    <h2>Permissions we ask for, and why</h2>
-    <div class="table-scroll">
+  <h2>Permissions we ask for, and why</h2>
+  <div class="panel">
     <table>
       <thead><tr><th>Permission</th><th>Why</th></tr></thead>
       <tbody>
@@ -147,35 +143,34 @@
         <tr><td><strong>Biometrics / Fingerprint</strong></td><td>To unlock the app, if you choose to enable it. Your fingerprint or face never leaves the Android system; the app only receives a yes/no.</td></tr>
       </tbody>
     </table>
-    </div>
-    <p>The app requests no location, no contacts, no SMS, and no access to your photo library.</p>
+  </div>
+  <p>The app requests no location, no contacts, no SMS, and no access to your photo library.</p>
 
-    <h2>Text recognition happens on your device</h2>
-    <p>Reading the text off a receipt uses Google's ML Kit text recognition, running <strong>entirely on your phone</strong> with a model bundled in the app. Your receipt image is not sent to Google or to us in order to be read.</p>
+  <h2>Text recognition happens on your device</h2>
+  <p>Reading the text off a receipt uses Google's ML Kit text recognition, running <strong>entirely on your phone</strong> with a model bundled in the app. Your receipt image is not sent to Google or to us in order to be read.</p>
 
-    <h2>Payments</h2>
-    <p>If you subscribe to a paid plan, the payment is handled entirely by <strong>Google Play Billing</strong>. We never see your card details. The app only learns whether your subscription is active. Google's handling of your payment data is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+  <h2>Payments</h2>
+  <p>If you subscribe to a paid plan, the payment is handled entirely by <strong>Google Play Billing</strong>. We never see your card details. The app only learns whether your subscription is active. Google's handling of your payment data is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 
-    <h2>Bank connections</h2>
-    <p>Basket Vitality does <strong>not</strong> connect to your bank. Statement importing works on a file you export from your bank yourself and choose to open in the app; the parsing happens on your device.</p>
-    <p>Direct bank connections are planned for a later release. If and when that ships, this policy will be updated <strong>before</strong> the feature is available, and connecting an account will be something you explicitly opt into.</p>
+  <h2>Bank connections</h2>
+  <p>Basket Vitality does <strong>not</strong> connect to your bank. Statement importing works on a file you export from your bank yourself and choose to open in the app; the parsing happens on your device.</p>
+  <p>Direct bank connections are planned for a later release. If and when that ships, this policy will be updated <strong>before</strong> the feature is available, and connecting an account will be something you explicitly opt into.</p>
 
-    <h2>Your rights</h2>
-    <p>Because your data lives on your device and we hold no copy, most GDPR rights resolve directly in the app rather than by writing to us:</p>
-    <ul>
-      <li><strong>Access and portability</strong> — Settings → Export Data (CSV) gives you your transactions in a standard, portable format.</li>
-      <li><strong>Erasure</strong> — Settings → Danger Zone → Clear all data permanently deletes everything: the encrypted database, its encryption keys, your PIN, your receipt images and your preferences. The app returns to first-launch setup. This is immediate and irreversible; because there is no cloud copy, there is nothing left for us or anyone else to recover.</li>
-      <li><strong>Rectification</strong> — you can edit or delete any receipt, transaction, budget or category at any time.</li>
-    </ul>
-    <p>Uninstalling the app also removes all of it.</p>
-    <p>You have the right to lodge a complaint with a supervisory authority. In the Netherlands that is the <a href="https://autoriteitpersoonsgegevens.nl">Autoriteit Persoonsgegevens</a>.</p>
+  <h2>Your rights</h2>
+  <p>Because your data lives on your device and we hold no copy, most GDPR rights resolve directly in the app rather than by writing to us:</p>
+  <ul>
+    <li><strong>Access and portability</strong> — Settings → Export Data (CSV) gives you your transactions in a standard, portable format.</li>
+    <li><strong>Erasure</strong> — Settings → Danger Zone → Clear all data permanently deletes everything: the encrypted database, its encryption keys, your PIN, your receipt images and your preferences. The app returns to first-launch setup. This is immediate and irreversible; because there is no cloud copy, there is nothing left for us or anyone else to recover.</li>
+    <li><strong>Rectification</strong> — you can edit or delete any receipt, transaction, budget or category at any time.</li>
+  </ul>
+  <p>Uninstalling the app also removes all of it.</p>
+  <p>You have the right to lodge a complaint with a supervisory authority. In the Netherlands that is the <a href="https://autoriteitpersoonsgegevens.nl">Autoriteit Persoonsgegevens</a>.</p>
 
-    <h2>Children</h2>
-    <p>Basket Vitality is not directed at children and we do not knowingly process children's data. Since we hold no data at all, there is nothing for us to delete on request — clearing the app's data removes everything.</p>
+  <h2>Children</h2>
+  <p>Basket Vitality is not directed at children and we do not knowingly process children's data. Since we hold no data at all, there is nothing for us to delete on request — clearing the app's data removes everything.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>If the app starts doing something materially different with data — a new outbound connection, optional crash reporting, bank connections — this policy will be updated <strong>before</strong> that ships, and the change will be called out in the app rather than quietly edited here. The last-updated date above always reflects the current version.</p>
-  </main>
+  <h2>Changes to this policy</h2>
+  <p>If the app starts doing something materially different with data — a new outbound connection, optional crash reporting, bank connections — this policy will be updated <strong>before</strong> that ships, and the change will be called out in the app rather than quietly edited here. The last-updated date above always reflects the current version.</p>
 
   <footer>
     <p>© 2026 Basket Vitality · TheDevSpot</p>
