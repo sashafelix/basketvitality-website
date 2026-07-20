@@ -121,6 +121,7 @@
   <p>When a scanned item isn't in the product database already bundled with the app, we ask <a href="https://world.openfoodfacts.org">Open Food Facts</a> about it. The request contains <strong>only the product's barcode</strong> — a number identifying the product, not you. It carries no device identifier, no account, no location, and nothing about your basket, your budget or your other items.</p>
   <p>Open Food Facts is an independent open database. Their servers will see the request, including the IP address your phone connects from, as any web request would. We do not send them anything else, and we do not receive anything about you from them.</p>
   <p>The request identifies the app in its User-Agent header so Open Food Facts can see which application is calling — this is their published etiquette for API users, not a tracking mechanism.</p>
+  <p>If you open a scanned product's detail, its <strong>photo, ingredients and additive list</strong> are fetched from Open Food Facts in the same way — again keyed only by the product, never by you, and only for a product you chose to look up. Nothing about your visit is recorded beyond the ordinary web-server log of the request.</p>
 
   <h3>2. Product database updates</h3>
   <p>The app periodically downloads an updated bundle of product and nutrition data. This is a plain download — a file comes to your phone. Nothing about you is sent in order to fetch it.</p>
