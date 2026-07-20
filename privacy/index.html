@@ -76,14 +76,9 @@
     body { font-size:16px; }
     h1 { font-size:2.1rem; }
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --emerald:#4FB477; --forest:#86C11C; --gold:#E4C169;
-      --ivory:#101914; --paper-raised:#17201A; --mist:#16241A;
-      --ink:#E8EAE9; --ink-subtle:#BBBFBC; --ink-muted:#9BA39D; --outline:#26332B;
-    }
-    body { -webkit-font-smoothing:auto; }
-  }
+  /* Light-only, always warm-ivory — matches the app's look regardless of the
+     viewer's browser/OS theme (deliberately no prefers-color-scheme: dark). */
+  :root { color-scheme: light; }
 </style>
 </head>
 <body>
