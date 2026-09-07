@@ -1,0 +1,23 @@
+{
+  // Cloudflare Workers static-assets config (HOM-864).
+  //
+  // Chosen over the Pages workflow because Cloudflare's own dashboard now
+  // labels Pages "legacy" and steers new projects here. Both serve the same
+  // files from the same edge and both read `_headers`; this one is the path
+  // that still gets developed, so it avoids a migration later.
+  //
+  // There is no `main` and no build step. This Worker serves static assets and
+  // nothing else — the site is hand-written HTML with zero scripts, which is
+  // also what lets `_headers` set `default-src 'none'`.
+  "name": "basketvitality-website",
+  "compatibility_date": "2026-09-07",
+  "assets": {
+    // Served from the repo root on purpose. The obvious tidier alternative —
+    // moving the site into ./public — would break GitHub Pages, which serves
+    // from the root and is still the LIVE host until the DNS cutover. Keeping
+    // the layout means both hosts can serve the same tree, so the switch is
+    // reversible: if anything goes wrong, point DNS back and nothing else has
+    // to change.
+    "directory": "."
+  }
+}
