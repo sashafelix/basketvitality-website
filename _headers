@@ -1,0 +1,48 @@
+# Cloudflare Pages response headers (HOM-864).
+#
+# This file is the reason for moving off GitHub Pages: GitHub Pages cannot set
+# response headers at all, so on that host the site's privacy claim was asserted
+# and unenforced. Here it is enforced by the browser.
+#
+# Inert on GitHub Pages — safe to land before the cutover.
+
+/*
+  # Nothing is allowed by default. Both pages are fully static and contain
+  # ZERO <script> tags, so scripting is denied outright rather than narrowed:
+  # default-src 'none' already covers script-src.
+  #
+  # This is the forcing function. The landing page draft currently pulls
+  # Fraunces/Geist from fonts.googleapis.com, which contradicts its own
+  # "no analytics" copy. Under this policy that fails LOUDLY in the browser
+  # console instead of silently handing every visitor's IP to a third party.
+  # Self-host the fonts in /fonts/ — the privacy page already does.
+  #
+  # style-src keeps 'unsafe-inline' because both pages carry one inline
+  # <style> block. A hash would be stricter but must be regenerated on every
+  # CSS edit, and with no scripts, no forms and no dynamic content there is no
+  # injection vector for it to matter against.
+  Content-Security-Policy: default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+  # Send no referrer anywhere. Costs nothing — there is no analytics to feed.
+  Referrer-Policy: no-referrer
+
+  X-Content-Type-Options: nosniff
+  # Superseded by frame-ancestors above; kept for older browsers.
+  X-Frame-Options: DENY
+
+  # The app asks for camera; the website never should. Deny the lot.
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()
+
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+  # 1 year. NOT preloaded: HSTS preload is a one-way door that is slow and
+  # painful to reverse, and it should be a deliberate decision, not a default.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Fonts are content-addressed by filename and never change in place.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=604800
