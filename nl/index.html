@@ -136,6 +136,14 @@
     text-transform:uppercase; color:var(--ink-muted);
   }
 
+  /* ══ business identification (Art. 3:15d BW) ══
+     Dutch law requires a provider of an information society service to make its
+     name, geographic address, contact details, KVK number and VAT number
+     easily, directly and permanently accessible. Permanently = on every page,
+     which is why this sits in the shared footer rather than on an about page. */
+  .legal { font-size:0.78rem; line-height:1.6; color:var(--ink-muted); margin:16px 0 0; }
+  .legal a { color:var(--ink-subtle); }
+
   /* ══ footer links ══ */
   .footer-links { display:flex; gap:20px; margin:14px 0 18px; flex-wrap:wrap; }
   .footer-links a {
@@ -536,6 +544,13 @@
     </nav>
     <p class="fine">Basket Vitality geeft je informatie, geen medisch of financieel advies. De getoonde bon en het rapport zijn voorbeelden: prijzen, scores en voedingswaarden zijn illustratief. Nutri-Score en Eco-Score worden berekend uit gegevens van Open Food Facts.</p>
     <p class="copyright">© 2026 The Dev Spot. Basket Vitality is een geregistreerde handelsnaam.</p>
+    <p class="legal">
+      The Dev Spot · Westerstraat 10 UNIT G4118, 3016 DH Rotterdam
+      <br>
+      KvK 42149955 · <a href="mailto:privacy@basketvitality.com">privacy@basketvitality.com</a><br>
+      <!-- TODO (legal): btw-identificatienummer toevoegen — zie de Engelse pagina. -->
+      Genoemde prijzen zijn inclusief btw. Betaling en facturatie lopen via Google Play.
+    </p>
   </div>
 </footer>
 
