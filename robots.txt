@@ -1,0 +1,5 @@
+# basketvitality.com
+User-agent: *
+Allow: /
+
+Sitemap: https://basketvitality.com/sitemap.xml
