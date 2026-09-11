@@ -127,14 +127,11 @@
   /* ══ Google Play badge ══
      Self-hosted on purpose. The CSP is img-src 'self', so hot-linking Google's
      copy would be blocked — and hosting it is what Google's own guidelines
-     expect anyway. The artwork is unmodified: the pre-launch state is said in
-     the caption, not by dimming the badge. */
+     expect anyway. The artwork is unmodified and links to the listing, which
+     went live 2026-09-11. */
   .badge-wrap { display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin:4px 0 0; }
   .play-badge { display:block; width:182px; height:auto; }
-  .badge-note {
-    font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em;
-    text-transform:uppercase; color:var(--ink-muted);
-  }
+  .play-link { display:inline-block; text-decoration:none; }
 
   /* ══ business identification (Art. 3:15d BW) ══
      Dutch law requires a provider of an information society service to make its
@@ -519,14 +516,10 @@
         <li>Every swap on every receipt, not just the top two</li>
         <li>Unlimited bank-statement imports</li>
       </ul>
-      <!-- LAUNCH SWAP: when Production publishes, wrap the <img> below in
-           <a href="https://play.google.com/store/apps/details?id=com.thedevspot.basketvitality"> ... </a>
-           and delete the .badge-note line. The badge is deliberately NOT a link
-           yet: there is no listing, and a badge pointing at a 404 is worse than
-           a badge that says it is coming. -->
       <div class="badge-wrap">
-        <img class="play-badge" src="/play-badge-en.png" alt="Get it on Google Play" width="182" height="70">
-        <span class="badge-note">Coming to Google Play</span>
+        <a class="play-link" href="https://play.google.com/store/apps/details?id=com.thedevspot.basketvitality">
+          <img class="play-badge" src="/play-badge-en.png" alt="Get it on Google Play" width="182" height="70">
+        </a>
       </div>
     </div>
 
