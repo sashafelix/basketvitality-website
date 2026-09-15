@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Basket Vitality — Nutri-Score, Eco-Score en budget, van één kassabon</title>
-<meta name="description" content="Fotografeer je kassabon en lees hem op drie manieren tegelijk: Nutri-Score voor gezondheid, Eco-Score en CO₂e voor milieu, en je eigen budget. Gratis en onbeperkt. Er verlaat niets je telefoon.">
+<title>Basket Vitality — kassabonnen, barcodes en budgetten</title>
+<meta name="description" content="Scan kassabonnen en barcodes in de winkel, bekijk Nutri-Score en volg je budget met waarschuwingen in de app. Gratis scannen op Android. Voor Nederland.">
 <link rel="canonical" href="https://basketvitality.com/nl/">
 <link rel="alternate" hreflang="en" href="https://basketvitality.com/">
 <link rel="alternate" hreflang="nl" href="https://basketvitality.com/nl/">
@@ -15,16 +15,16 @@
 <meta property="og:site_name" content="Basket Vitality">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:url" content="https://basketvitality.com/nl/">
-<meta property="og:title" content="Basket Vitality — Nutri-Score, Eco-Score en budget, van één kassabon">
-<meta property="og:description" content="Je boodschappen zeiden dit allang. Niemand luisterde. Scan een kassabon en zie geld, gezondheid en milieu op één plek — gratis, en volledig op je telefoon.">
+<meta property="og:title" content="Basket Vitality — kassabonnen, barcodes en budgetten">
+<meta property="og:description" content="Scan kassabonnen en barcodes in de winkel, bekijk Nutri-Score en volg je budget met waarschuwingen in de app. Gratis scannen op Android. Voor Nederland.">
 <meta property="og:image" content="https://basketvitality.com/og-image.png">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="500">
 <meta property="og:image:alt" content="Basket Vitality — slimmere mandjes, gezondere keuzes">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Basket Vitality — Nutri-Score, Eco-Score en budget, van één kassabon">
-<meta name="twitter:description" content="Scan een kassabon en zie geld, gezondheid en milieu op één plek. Gratis, en volledig op je telefoon.">
+<meta name="twitter:title" content="Basket Vitality — kassabonnen, barcodes en budgetten">
+<meta name="twitter:description" content="Scan kassabonnen en barcodes in de winkel, bekijk Nutri-Score en volg je budget met waarschuwingen in de app. Gratis scannen op Android. Voor Nederland.">
 <meta name="twitter:image" content="https://basketvitality.com/og-image.png">
 
 <meta name="theme-color" content="#F6F2DE">
@@ -51,14 +51,38 @@
   "url": "https://basketvitality.com/nl/",
   "applicationCategory": "GezondheidApplication",
   "operatingSystem": "Android",
-  "description": "Scan een kassabon en lees hem op drie manieren tegelijk: Nutri-Score voor gezondheid, Eco-Score en CO2e voor milieu, en je eigen budget voor geld. Verwerkt op je toestel.",
-  "author": { "@type": "Organization", "name": "The Dev Spot" },
-  "publisher": { "@type": "Organization", "name": "The Dev Spot" },
-  "inLanguage": ["en", "nl"],
+  "description": "Scan kassabonnen en barcodes in de winkel, bekijk Nutri-Score en volg je budget met waarschuwingen in de app. Gratis scannen op Android. Voor Nederland.",
+  "author": {
+    "@type": "Organization",
+    "name": "The Dev Spot"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Dev Spot"
+  },
+  "inLanguage": [
+    "en",
+    "nl"
+  ],
   "offers": [
-    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Pro, monthly", "price": "6.99", "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Pro, yearly", "price": "49.99", "priceCurrency": "EUR" }
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro, monthly",
+      "price": "6.99",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro, yearly",
+      "price": "49.99",
+      "priceCurrency": "EUR"
+    }
   ],
   "privacyPolicy": "https://basketvitality.com/privacy/"
 }
@@ -340,11 +364,43 @@
   footer { padding:56px 0 72px; border-top:1px solid var(--outline); }
   footer p { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 10px; }
   footer .fine { font-family:var(--sans); font-size:0.86rem; letter-spacing:0; text-transform:none; color:var(--ink-muted); max-width:60ch; line-height:1.6; }
+
+  /* Current features and the public roadmap, September 2026. */
+  .primary-nav { flex-wrap:wrap; gap:8px 22px; }
+  .primary-nav .wordmark { color:var(--ink); text-decoration:none; }
+  .site-links { display:flex; flex-wrap:wrap; gap:8px 22px; }
+  .site-links a { display:inline-flex; align-items:center; min-height:44px; color:var(--forest); font-size:.9rem; text-decoration:none; }
+  .site-links a:hover { text-decoration:underline; text-underline-offset:5px; }
+  a:focus-visible { outline:3px solid var(--gold-deep); outline-offset:4px; }
+  .availability { font-size:.92rem; color:var(--forest); margin:18px 0 0; }
+  .text-link { color:var(--forest); text-underline-offset:5px; }
+  .feature-split { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:54px; align-items:start; }
+  .feature-steps { list-style:none; margin:0; padding:0; border-top:1px solid var(--outline); }
+  .feature-steps li { padding:22px 0; border-bottom:1px solid var(--outline); }
+  .feature-steps h3 { font-family:var(--serif); font-size:1.4rem; font-weight:400; margin:0 0 8px; }
+  .feature-steps p { font-size:.98rem; margin:0; }
+  .feature-steps .step-label { display:block; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; color:var(--gold-deep); margin-bottom:8px; }
+  .feature-note { font-size:.92rem; margin-top:22px; }
+  .example-caption { font-size:.78rem; line-height:1.5; color:var(--ink-subtle); margin:14px 0 0; }
+  .lens.eco .big { font-size:1.75rem; line-height:1.2; }
+  .roadmap-teaser { border-top:1px solid var(--outline); }
+  section .trial-terms { font-size:.9rem; line-height:1.6; color:var(--ink-subtle); }
+  @media (max-width:760px) {
+    .feature-split { grid-template-columns:1fr; gap:30px; }
+    .primary-nav .site-links { order:3; flex-basis:100%; justify-content:space-between; gap:8px; border-top:1px solid var(--outline); }
+  }
+  @media (max-width:420px) {
+    .primary-nav { column-gap:12px; }
+    .pricebox { padding:28px 24px; }
+    .rp-head { flex-wrap:wrap; }
+    .rp-row { flex-wrap:wrap; gap:6px; }
+  }
 </style>
 
 <div class="wrap">
-  <nav>
-    <p class="wordmark">Basket <em>Vitality</em></p>
+  <nav class="primary-nav" aria-label="Hoofdnavigatie">
+    <a class="wordmark" href="/nl/">Basket <em>Vitality</em></a>
+    <div class="site-links"><a href="#scan-in-store">In de winkel</a><a href="#budgeting">Budgetten</a><a href="/nl/roadmap/">Roadmap</a></div>
     <div class="navright">
       <span class="nav-note">Nederland · Android</span>
       <div class="langswitch">
@@ -356,16 +412,18 @@
 
   <div class="hero">
     <div>
-      <p class="eyebrow">Één foto van één kassabon</p>
+      <p class="eyebrow">Voor en na je boodschappen</p>
       <h1>Je boodschappen zeiden dit allang. <em>Niemand luisterde.</em></h1>
-      <p class="hero-sub">Basket Vitality leest je kassabon en laat zien wat hij kostte, hoe hij scoort voor gezondheid, en wat hij de planeet kostte — in één keer, op je telefoon, in seconden.</p>
+      <p class="hero-sub">Scan een kassabon en verbind je boodschappenuitgaven met Nutri-Score. Of scan een barcode in de winkel voordat je iets koopt. Stel een budget in en zie waarschuwingen in de app wanneer je de grens nadert.</p>
       <div class="cta-row">
-        <a class="btn" href="#price">Scan je eerste kassabon — gratis</a>
-        <span class="cta-note">Geen account. Niets geüpload.</span>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.thedevspot.basketvitality">Download Basket Vitality — gratis</a>
+        <span class="cta-note">Geen account. Je bonnen blijven op je telefoon.</span>
       </div>
+      <p class="availability">Android · Momenteel alleen beschikbaar in Nederland.</p>
     </div>
 
     <div>
+      <p class="example-caption">Illustratief voorbeeld, geen schermafbeelding van de app. Prijzen en scores zijn voorbeelden.</p>
       <div class="receipt">
         <div class="scanline"></div>
         <div class="r-head">
@@ -385,7 +443,7 @@
       </div>
 
       <div class="verdict">
-        <p class="line">Je hebt <b>67%</b> van je boodschappenbudget gebruikt — en <b>51% daarvan scoorde Nutri-D of slechter</b>. <span class="money">Drie swaps zouden helpen.</span></p>
+        <p class="line">Je boodschappenbudget is voor <b>67% gebruikt</b>. Op deze voorbeeldbon heeft <b>51% van de beoordeelde uitgaven Nutri-Score D of E</b>. <span class="money">Bekijk drie voorgestelde swaps.</span></p>
       </div>
     </div>
   </div>
@@ -393,10 +451,42 @@
 
 <section class="tint">
   <div class="wrap narrow">
-    <p class="eyebrow">Waarom niemand je dit eerder liet zien</p>
+    <p class="eyebrow">Uitgaven en voedingswaarden samen</p>
     <h2>Je wist deze twee dingen allang. <em>Niemand zei je dat het hetzelfde ding was.</em></h2>
     <p class="lead">Je weet dat de weekboodschappen duurder zijn dan vroeger. Je weet dat je niet zo goed eet als je zou willen. Je voelde allebei — los van elkaar, en een beetje schuldig.</p>
-    <p>Het zijn dezelfde producten. De snacks die je boodschappenbudget opeten zijn dezelfde snacks die Nutri-D scoren. Eén app moet allebei tegelijk zien om je dat te vertellen, en tot nu deed geen enkele dat: de gezondheidsscanners lezen één barcode per keer, en de budget-apps zien een regel die <em>Supermarkets — €23,13</em> heet en houden daarmee op.</p>
+    <p>Het zijn dezelfde aankopen, vanuit verschillende perspectieven bekeken. Basket Vitality brengt uitgaven en beschikbare productscores samen, zodat je ziet waar een andere keuze verschil kan maken bij je volgende boodschappen.</p>
+  </div>
+</section>
+
+<section class="tint" id="scan-in-store">
+  <div class="wrap feature-split">
+    <div><p class="eyebrow">Voordat het in je mandje gaat</p>
+      <h2>Scan de barcode. <em>Beslis daarna.</em></h2>
+      <p>Richt je camera op een productbarcode in de supermarkt. Bekijk Nutri-Score en voedingswaarden, plus Eco-Score als die voor het product beschikbaar is, voordat je het koopt.</p>
+      <p>Bekijk een voorgestelde Smart Swap als de app een passend alternatief vindt. Niet alle productinformatie is beschikbaar; de app laat zien wanneer gegevens ontbreken.</p>
+      <p class="feature-note"><strong>Nu beschikbaar, gratis en onbeperkt.</strong> Voor een barcodecheck heb je geen kassabon nodig.</p>
+    </div>
+    <ol class="feature-steps">
+      <li><span class="step-label">01 / Scannen</span><h3>Controleer een product bij het schap</h3><p>Gebruik de barcodescanner in de winkel of zoek een product op naam.</p></li>
+      <li><span class="step-label">02 / Begrijpen</span><h3>Bekijk de informatie achter de score</h3><p>Open de productdetails voor beschikbare voedingswaarden en uitleg over de score.</p></li>
+      <li><span class="step-label">03 / Kiezen</span><h3>Overweeg een passend alternatief</h3><p>Vergelijk een Smart Swap als er een beschikbaar is. Een suggestie garandeert geen winkelvoorraad of lagere prijs.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="budgeting">
+  <div class="wrap feature-split">
+    <div><p class="eyebrow">Je geld in beeld</p>
+      <h2>Stel een budget in. <em>Weet waar je staat.</em></h2>
+      <p>Maak een maandbudget per categorie en volg wat je hebt uitgegeven en wat er overblijft. De app waarschuwt je wanneer je het ingestelde bedrag nadert of overschrijdt.</p>
+      <p>Bij bonnen die aan de voorwaarden voldoen, verbindt een melding je categoriebudget met het aandeel beoordeelde uitgaven met Nutri-Score D of E en beschikbare Smart Swaps.</p>
+      <p class="feature-note"><strong>Eén budgetcategorie is gratis.</strong> Pro biedt onbeperkt budgetcategorieën. De waarschuwingen staan in de app; automatische telefoonmeldingen staan op de <a class="text-link" href="/nl/roadmap/#insights">roadmap</a>.</p>
+    </div>
+    <ol class="feature-steps">
+      <li><span class="step-label">Volgen</span><h3>Uitgegeven en over</h3><p>Bekijk je uitgaven ten opzichte van het budget voor de gekozen maand.</p></li>
+      <li><span class="step-label">Bijna aan de grens</span><h3>Oranje bij meer dan 80%</h3><p>De voortgangsbalk wordt oranje zodra meer dan 80% van je budget is gebruikt.</p></li>
+      <li><span class="step-label">Budget overschreden</span><h3>Rood, met het bedrag erboven</h3><p>Als je meer uitgeeft dan je budget, zie je met welk bedrag je het hebt overschreden.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -404,25 +494,25 @@
   <div class="wrap">
     <div class="narrow">
       <p class="eyebrow">Drie lenzen, één mandje</p>
-      <h2>Dezelfde boodschappen, op drie manieren tegelijk gelezen</h2>
-      <p>Elk product wordt gescoord zodra de bon gelezen is — niets typen, niets labelen, niets afstemmen.</p>
+      <h2>Je uitgaven, voedingswaarden en beschikbare milieugegevens</h2>
+      <p>Producten op je bon worden op je telefoon gekoppeld aan productinformatie. Scores hangen af van beschikbare gegevens; je kunt een verkeerde koppeling zelf corrigeren.</p>
     </div>
 
     <div class="lenses">
       <div class="lens money">
         <span class="tag">Geld</span>
         <span class="big">€23,13</span>
-        <p>Onder Boodschappen gezet door de winkel waar hij vandaan komt — de hele bon, niet elk product. Boodschappen staat deze maand op 67%, €148,50 over.</p>
+        <p>Volg de kosten van je boodschappen ten opzichte van je maandbudget per categorie, met uitgegeven, resterende en overschreden bedragen.</p>
       </div>
       <div class="lens health">
         <span class="tag">Gezondheid</span>
-        <span class="big">C+</span>
-        <p>Nutri-Score voor het hele mandje, niet één product. Vier producten scoorden D of E — €11,76 van een mandje van €23,13.</p>
+        <span class="big">51%</span>
+        <p>In dit voorbeeld heeft €11,76 van €23,13 een Nutri-Score D of E. De app toont hoeveel beoordeeld kon worden en welk aandeel van de beoordeelde uitgaven D of E scoort.</p>
       </div>
       <div class="lens eco">
         <span class="tag">Milieu</span>
-        <span class="big">B</span>
-        <p>Eco-Score waar een product er een heeft, en CO₂e waar een bron dat cijfer heeft — zodat de goedkope keuze en de schone keuze minder een gok zijn.</p>
+        <span class="big">Waar bekend</span>
+        <p>Eco-Score staat bij productdetails wanneer deze beschikbaar is. Bonregels kunnen CO₂e met bronvermelding tonen waar die gegevens bekend zijn. De app geeft niet elk mandje een volledige milieuscore.</p>
       </div>
     </div>
   </div>
@@ -433,9 +523,10 @@
     <div class="narrow">
       <p class="eyebrow">Slimme swaps</p>
       <h2>Drie veranderingen die je echt zou doen</h2>
-      <p>Niet "eet minder". Hetzelfde schap, dezelfde winkel — een ander product erin, en de reden per 100 g. Het noemt nooit een prijs die het niet op één van jouw bonnen heeft gezien.</p>
+      <p>Een korte lijst alternatieven, met een uitleg op basis van beschikbare voedingswaarden. Een besparing verschijnt alleen als je eigen waargenomen prijzen en vergelijkbare verpakkingen die onderbouwen. Winkelvoorraad is niet gegarandeerd.</p>
     </div>
 
+    <p class="example-caption">Illustratieve Smart Swaps. Werkelijke suggesties hangen af van beschikbare productgegevens.</p>
     <div class="swaps">
       <div class="swap">
         <div class="from"><span class="n">Naturel chips 225g · €3,29</span><span class="sub">Nutri<span class="chip d">D</span></span></div>
@@ -461,10 +552,10 @@
       <div class="loop-copy">
         <p class="eyebrow">De cirkel rond</p>
         <h3>Daarna kijkt hij zijn eigen huiswerk na.</h3>
-        <p>Bewaar een swap. Koop hem. De volgende bon die je scant bevestigt het — en zegt wat het echt kostte, allebei de kanten op. De meeste apps tellen alleen de winst. Deze saldeert ze, zodat het getal te vertrouwen is als het in jouw voordeel uitvalt.</p>
+        <p>Bewaar een swap en scan een latere bon nadat je het alternatief hebt gekocht. Als de app de aankoop koppelt, wordt de opvolging vastgelegd. Het mandjerapport telt bekende besparingen en extra kosten bij elkaar op, zodat je het netto verschil ziet.</p>
       </div>
       <div class="report" aria-label="Example basket report">
-        <div class="rp-head"><span>Mandjerapport</span><span>3 swaps doorgezet</span></div>
+        <div class="rp-head"><span>Voorbeeld mandjerapport</span><span>3 swaps doorgezet</span></div>
         <div class="rp-row"><span class="what">Popcornmaïs in plaats van naturel chips</span><span class="delta cheaper">€1,50 goedkoper</span></div>
         <div class="rp-row"><span class="what">Yoghurt naturel in plaats van vruchtenyoghurt</span><span class="delta dearer">€0,40 duurder</span></div>
         <div class="rp-row"><span class="what">Bruiswater in plaats van cola</span><span class="delta cheaper">€1,60 goedkoper</span></div>
@@ -488,8 +579,8 @@
         <p>Er valt niets aan te melden. Geen e-mail, geen wachtwoord, geen profiel. Je opent de app en gebruikt hem.</p>
       </div>
       <div class="promise">
-        <h3>Geen server</h3>
-        <p>Je bonnen, transacties en scores staan in een versleutelde database op je toestel. Wij hebben geen kopie, omdat er nergens is om er één te bewaren. Het enige dat ooit naar buiten gaat is een anonieme productopzoeking bij Open Food Facts — een barcode, verder niets. En als Open Food Facts geen score voor een product heeft, zegt de app <em>Nog geen score</em> in plaats van er één te verzinnen.</p>
+        <h3>Op je telefoon bewaard</h3>
+        <p>Je bonnen, transacties en scores staan in een versleutelde database op je toestel. Downloads van productgegevens, productfoto’s en optionele barcodezoekopdrachten gebruiken online diensten; je bonfoto’s en financiële gegevens worden niet geüpload. Google Play verwerkt abonnementen. De app geeft aan wanneer scores ontbreken of afgeleid zijn.</p>
       </div>
       <div class="promise">
         <h3>Geen analytics</h3>
@@ -504,16 +595,17 @@
     <div class="narrow">
       <p class="eyebrow">Prijs</p>
       <h2>Scannen is gratis. Altijd.</h2>
-      <p>Onbeperkt bonnen, de volledige score op drie lenzen voor elk product, en de barcodescanner in de winkel — allemaal gratis, zonder limiet. Gratis houdt de laatste zeven dagen aan bonnen in beeld; Pro houdt ze allemaal.</p>
+      <p>Kassabonnen en barcodes scannen is gratis en onbeperkt. Je krijgt beschikbare productscores, budgetwaarschuwingen in de app, de beste Smart Swaps, één budgetcategorie en zeven dagen bonnengeschiedenis. Gratis omvat ook één eenmalige import van een bankafschrift. Pro voegt de onderstaande extra’s toe.</p>
     </div>
 
     <div class="pricebox">
       <div class="amt">€6,99<span> / maand · of €49,99 / jaar</span></div>
-      <p class="free">14 dagen gratis · altijd opzegbaar via de Play Store</p>
+      <p class="free">14 dagen gratis proberen voor nieuwe abonnees die in aanmerking komen</p>
+      <p class="trial-terms">Na de proefperiode: €6,99 per maand of €49,99 per jaar, afhankelijk van je abonnement. Het abonnement wordt automatisch verlengd tenzij je opzegt. Beheer of beëindig het via Google Play.</p>
       <ul>
         <li>Elke budgetcategorie die je nodig hebt, niet één</li>
         <li>Je volledige geschiedenis, niet de laatste zeven dagen</li>
-        <li>Elke swap op elke bon, niet alleen de beste twee</li>
+        <li>De volledige beschikbare lijst Smart Swaps, voorbij de eerste twee</li>
         <li>Onbeperkt bankafschriften importeren</li>
       </ul>
       <div class="badge-wrap">
@@ -529,10 +621,17 @@
   </div>
 </section>
 
+<section class="roadmap-teaser"><div class="wrap narrow">
+    <p class="eyebrow">Onze volgende stappen</p><h2>Voor je volgende boodschappen. <em>En die daarna.</em></h2>
+    <p>Bekijk het voorstel voor toekomstige releases: eenvoudiger bonnen verwerken, digitale kassabonnen, je eigen prijsgeschiedenis en meer. Bestaande functies staan apart van toekomstplannen.</p>
+    <a class="btn" href="/nl/roadmap/">Bekijk de roadmap</a>
+  </div></section>
+
 <footer>
   <div class="wrap narrow">
     <p>Basket Vitality · The Dev Spot</p>
     <nav class="footer-links" aria-label="Footer">
+      <a href="/nl/roadmap/">Roadmap</a>
       <a href="/privacy/">Privacybeleid</a>
     </nav>
     <p class="fine">Basket Vitality geeft je informatie, geen medisch of financieel advies. De getoonde bon en het rapport zijn voorbeelden: prijzen, scores en voedingswaarden zijn illustratief. Nutri-Score en Eco-Score komen van Open Food Facts; CO₂e-cijfers komen van AGRIBALYSE.</p>
@@ -551,3 +650,4 @@
 
 </body>
 </html>
+
