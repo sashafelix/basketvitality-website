@@ -107,7 +107,7 @@
                 <li>Corrections are buttons — confirm a match, fix it, or re-file the line — and the app only offers a confirmation when it has checked that a swap would result.</li>
                 <li>The receipt says when its lines don't add up to the printed total, instead of presenting a partial basket as complete.</li>
               </ul>
-              <p class="scope-note">Shipped as 1.1.0 on 16 September 2026, followed by 1.1.1 the next day and 1.1.2 on 18 September.</p>
+              <p class="scope-note">Shipped as 1.1.0 on 16 September 2026, followed by 1.1.1 the next day, 1.1.2 on 18 September and 1.1.5 on 23 September.</p>
             </div>
           </article>
           <article class="release" id="receipts-read-right">
@@ -137,6 +137,23 @@
                 <li>Alcohol-free beers now match their 0.0% product, and a swap suggestion never crosses into an unrelated aisle.</li>
               </ul>
               <p class="scope-note">The app remembers your plan on your phone — Google Play never tells it. After a reinstall it says so and lets you choose; nothing is guessed.</p>
+            </div>
+          </article>
+          <article class="release" id="receipts-add-up">
+            <div>
+              <p class="release-label">1.1.5 — Receipts add up</p>
+              <p class="release-state">Shipped · 23 September 2026</p>
+            </div>
+            <div>
+              <h3>Say when a match is wrong</h3>
+              <ul>
+                <li>"Not this product" next to Confirm — on the match hint, on the product page and on a line scored from the generic food table. One tap removes the wrong match and its grade from the basket, and the app remembers your answer, so the same product never comes back for that line. A line without a match can find its product from its own dialog.</li>
+                <li>Fairer grades: a bare HAM line counts as cooked ham rather than raw cured ham, milk is never scored as raw milk, frozen fries are compared with fries instead of crisps, and a variant the receipt never named — light, semi-skimmed, zero — is never a confident match; you get the confirm hint instead.</li>
+                <li>Receipts read better: a line bought twice keeps its name and shows ×2, the count column on Albert Heijn receipts no longer sticks to product names, and savings stamps appear as their own line so the lines add up to the printed total.</li>
+                <li>If the app cannot open its data file, it says so and keeps the file instead of starting over in silence.</li>
+                <li>Scanned receipts leave no plain-text copy on the phone outside the encrypted store. Earlier versions kept one in the app's own folder; 1.1.5 stops that and removes the copies.</li>
+              </ul>
+              <p class="scope-note">1.1.5 also carries 1.1.3 and 1.1.4, which were tested but never released on their own. Receipts you already scanned are matched again the next time you open them.</p>
             </div>
           </article>
           <article class="release" id="digital-receipts">
@@ -203,6 +220,11 @@
       <section id="release-history">
         <div class="wrap narrow">
           <h2>Release history</h2>
+          <article class="release-log">
+            <p class="release-label">23 September 2026 · 1.1.5</p>
+            <h3>Receipts add up</h3>
+            <p>"Not this product" and "Find the product" on every receipt line, fairer grades for ham, milk, fries and unnamed variants, receipts that keep their lines and add up to the total, a data file that is never deleted in silence. Rolling out on Google Play.</p>
+          </article>
           <article class="release-log">
             <p class="release-label">16 September 2026 · 1.1.0</p>
             <h3>Smoother everyday use</h3>
