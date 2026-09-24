@@ -107,7 +107,7 @@
                 <li>Corrections are buttons — confirm a match, fix it, or re-file the line — and the app only offers a confirmation when it has checked that a swap would result.</li>
                 <li>The receipt says when its lines don't add up to the printed total, instead of presenting a partial basket as complete.</li>
               </ul>
-              <p class="scope-note">Shipped as 1.1.0 on 16 September 2026, followed by 1.1.1 the next day, 1.1.2 on 18 September and 1.1.5 on 23 September.</p>
+              <p class="scope-note">Shipped as 1.1.0 on 16 September 2026, followed by 1.1.1 the next day, 1.1.2 on 18 September, 1.1.5 on 23 September and 1.1.6 on 24 September.</p>
             </div>
           </article>
           <article class="release" id="receipts-read-right">
@@ -137,6 +137,24 @@
                 <li>Alcohol-free beers now match their 0.0% product, and a swap suggestion never crosses into an unrelated aisle.</li>
               </ul>
               <p class="scope-note">The app remembers your plan on your phone — Google Play never tells it. After a reinstall it says so and lets you choose; nothing is guessed.</p>
+            </div>
+          </article>
+          <article class="release" id="read-as-written">
+            <div>
+              <p class="release-label">1.1.6 — Read as written</p>
+              <p class="release-state">Shipped · 24 September 2026</p>
+            </div>
+            <div>
+              <h3>Receipts read as written</h3>
+              <ul>
+                <li>A label word the scanner glues to the next word ("BIOZOETE AARDAPPEL") is read as two words, so a sweet potato is a vegetable, never a burger.</li>
+                <li>Names with accents match as well as plain ones, so your shop's own crème fraîche wins its line instead of a stranger's.</li>
+                <li>A store name with "XL" stuck to it still counts as that store.</li>
+                <li>Fairer swaps: alcohol-free drinks never borrow an alcoholic score, and every swap rule was checked against the product database — rules that pointed at products nobody sells were re-pointed or dropped, and a mayonnaise is never swapped for a pasta sauce.</li>
+                <li>"Fix match" on the product page looks like its neighbours.</li>
+                <li>A receipt paid with stamps and card books the full amount even when the total line cannot be read.</li>
+              </ul>
+              <p class="scope-note">After the update the product database re-indexes once, on the first unlock. Receipts you already scanned are matched again the next time you open them.</p>
             </div>
           </article>
           <article class="release" id="receipts-add-up">
@@ -220,6 +238,11 @@
       <section id="release-history">
         <div class="wrap narrow">
           <h2>Release history</h2>
+          <article class="release-log">
+            <p class="release-label">24 September 2026 · 1.1.6</p>
+            <h3>Read as written</h3>
+            <p>Glued label words split, accented names on equal terms, "XL" stores recognised, every swap rule checked against the product database, a consistent "Fix match". Rolling out on Google Play.</p>
+          </article>
           <article class="release-log">
             <p class="release-label">23 September 2026 · 1.1.5</p>
             <h3>Receipts add up</h3>
